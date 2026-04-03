@@ -92,7 +92,7 @@ To run this project:
 
 👥 Team Contributions
 
-* Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords & special characters & applied Lemmatization) & EDA : Self
+* Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords & special characters & Lemmatization) & EDA : Self
   
 * Additional EDA & Word Clouds, n-grams (Unigram,bigram): Teammate
 
