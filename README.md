@@ -1,6 +1,6 @@
 Government & public Sector -AI-Driven Citizen Grievance & Sentiment Analysis System
 
-🚧 Project Status
+Project Status
 
 Ongoing Internship Project – Week 1 Completed
 
@@ -92,11 +92,11 @@ To run this project:
 
 👥 Team Contributions
 
-- Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords and special characters & applied Lemmatization) and EDA : Self
-- 
--Additional EDA & Word Clouds, n-grams (Unigram,bigram): Teammate
+* Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords and special characters & applied Lemmatization) and EDA : Self
+  
+* Additional EDA & Word Clouds, n-grams (Unigram,bigram): Teammate
 
-- Remaining tasks: In progress
+* Remaining tasks: In progress
 
 📁 Project Structure
 
