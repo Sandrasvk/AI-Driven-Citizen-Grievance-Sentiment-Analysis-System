@@ -1,109 +1,86 @@
-Government & public Sector -AI-Driven Citizen Grievance & Sentiment Analysis System
+# 🏛️ Citizen Grievance Analysis using NLP
 
-Project Status
+🚀 Internship Project (Week 1 & Week 2)
 
-Ongoing Internship Project – Week 1 Completed
+## 📌 Project Overview
 
-This project in week1 is part of an internship program focused on analyzing large-scale service request data using Natural Language Processing (NLP),Exploratory Data Analysis (EDA) etc .
+This project focuses on analyzing citizen complaint data using Natural Language Processing (NLP) and basic Machine Learning techniques.
 
-🎯 Objective
+The work completed so far includes cleaning raw complaint text, exploring patterns in the data, and building a model to classify complaints into relevant departments.
 
-The objective of this project is to analyze 311 service request complaints and extract meaningful insights from unstructured textual data using NLP techniques.
+## ❗ Problem Statement
+
+Public grievance systems receive a large number of complaints in text format. Manually analyzing and categorizing these complaints is time-consuming and inefficient.
+
+This project aims to build a system that can automatically process complaint text and classify it into appropriate departments, helping improve response time and service efficiency.
+
+## 🎯 Objective
+
+- Clean and preprocess complaint text  
+- Perform Exploratory Data Analysis (EDA)  
+- Extract useful text features  
+- Build a classification model  
+
+## 📊 Dataset
 
 📂 Dataset
 
-- Dataset Name: NYC 311 Service Requests (2009)
-- Source: Kaggle
-- Link: https://www.kaggle.com/datasets/sheikmohamed/nyc-311-service-requests-for-2009/data
-- Main Source : https://data.cityofnewyork.us/Social-Services/311-Service-Requests-for-2009/3rfa-3xsf]
+Dataset Name: NYC 311 Service Requests (2009)
+Source: Kaggle
+Link: https://www.kaggle.com/datasets/sheikmohamed/nyc-311-service-requests-for-2009/data
+Main Source : https://data.cityofnewyork.us/Social-Services/311-Service-Requests-for-2009/3rfa-3xsf
 
 📊 Dataset Details:
 
-- Original Size: ~1.7 million records
-- Sample Used: 20,000 records (for efficient processing)
-
+Original Size: ~1.7 million records
+Sample Used: 20,000 records (for efficient processing)
 📥 Dataset Access
 
 The dataset is not included in this repository due to its large size and internship guidelines.
 
-To run this project:
+⚠️ Dataset is not included in this repository due to its large size.
 
-1. Download the dataset from the Kaggle link above
-2. Ensure the file name is:
-   "311 service requests for 2009.csv"
-3. Place the file in the same folder as the notebook
+### ▶️ How to Use
+1. Download dataset from the link above  
+2. Rename file to: 311 service requests for 2009.csv  
+3. Place it in the project folder  
 
+## 🧹 Week 1 – Data Cleaning & EDA
 
-🧹 Work Completed (Week 1)
+- Loaded dataset and selected relevant columns  
+- Performed text preprocessing:
+  - Lowercasing  
+  - URL removal  
+  - Special character removal  
+  - Stopwords removal  
+  - Lemmatization  
+- Conducted EDA to understand complaint patterns  
+- Created visualizations (WordCloud, plots)  
+- Extracted features using unigram and bigram (CountVectorizer)  
 
-✔ Data Loading & Inspection
+## 🤖 Week 2 – Classification Model
 
-- Loaded dataset using Pandas
-- Checked dataset shape and structure
-- Sampled,Slicing done for select 20,000 rows efficiently
+- Converted text into numerical form using *TF-IDF*  
+- Applied train-test split  
+- Trained models:
+  - Logistic Regression  
+  - Random Forest
+- Evaluated using:
+  - Accuracy  
+  - Confusion Matrix  
+  - Cross-validation  
 
-✔ Data Cleaning
+## 🧠 Workflow
 
-- Handled missing values
-- Selected relevant Columns
--Fill the missing values
-
-✔ Text Preprocessing
-
-- Converted text to lowercase
-- Removed URLs
-- Removed special characters
-- Removed stopwords
-- Applied lemmatization
-
-✔ Exploratory Data Analysis (EDA)
-
-- Analyzed data distribution
-- Identified patterns in complaints
-
-✔ Visualization
-
-- Generated WordCloud for text insights
-- Created plots using Matplotlib & Seaborn
-
-✔ NLP Feature Extraction
-
-- Unigram analysis
-- Bigram analysis
-- CountVectorizer implementation
+Text Cleaning → EDA → Feature Extraction → Model Training → Evaluation  
 
 
-🛠 Tools & Technologies
+## 🛠️ Tools Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- NLTK
-
-
-📈 Key Observations
-
-- Large volume of textual complaints requires preprocessing
-- Frequent terms identified using n-grams
-- WordCloud helps visualize dominant complaint topics
-
-👥 Team Contributions
-
-* Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords & special characters & Lemmatization) & EDA : Self
-  
-* Additional EDA & Word Clouds, n-grams (Unigram,bigram): Teammate
-
-* Remaining tasks: In progress
-
-📁 Project Structure
-
-project/
-│── week1 government data.ipynb
-
-│── README.md
-
-│── .gitignore
-
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Seaborn  
+- Scikit-learn  
+- NLTK  
