@@ -12,7 +12,7 @@ from text_utils import preprocess_text
 
 #------------LOADING THE DATASET----------------
 
-df = pd.read_csv("311_Service_Requests_for_2009.csv",low_memory=False)
+df = pd.read_csv("3/Users/nami.nanavati2812/Documents/AI-Driven-Citizen-Grievance-Sentiment-Analysis-System/311_Service_Requests_for_2009.csv",low_memory=False)
 
 cols = ['Complaint Type', 'Descriptor', 'Borough']
 
