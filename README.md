@@ -1,109 +1,45 @@
-Government & public Sector -AI-Driven Citizen Grievance & Sentiment Analysis System
+Government & Public Sector: AI-Driven Citizen Grievance & Sentiment Analysis System
 
-Project Status
+​🚀 Project Overview
 
-Ongoing Internship Project – Week 1 Completed
-
-This project in week1 is part of an internship program focused on analyzing large-scale service request data using Natural Language Processing (NLP),Exploratory Data Analysis (EDA) etc .
-
-🎯 Objective
-
-The objective of this project is to analyze 311 service request complaints and extract meaningful insights from unstructured textual data using NLP techniques.
+​An automated system designed to triage NYC 311 Service Requests. The project transforms unstructured citizen complaints into actionable data by predicting the relevant department, analyzing emotional sentiment, and calculating urgency in real-time.
 
 📂 Dataset
 
-- Dataset Name: NYC 311 Service Requests (2009)
-- Source: Kaggle
-- Link: https://www.kaggle.com/datasets/sheikmohamed/nyc-311-service-requests-for-2009/data
-- Main Source : https://data.cityofnewyork.us/Social-Services/311-Service-Requests-for-2009/3rfa-3xsf]
-
+Dataset Name: NYC 311 Service Requests (2009)
+Source: Kaggle
+Link: https://www.kaggle.com/datasets/sheikmohamed/nyc-311-service-requests-for-2009/data
+Main Source : https://data.cityofnewyork.us/Social-Services/311-Service-Requests-for-2009/3rfa-3xsf
 📊 Dataset Details:
 
-- Original Size: ~1.7 million records
-- Sample Used: 20,000 records (for efficient processing)
+Original Size: ~1.7 million records
+Sample Used: 20,000 records (for efficient processing)
 
-📥 Dataset Access
+ WORK PROGRESSs
 
-The dataset is not included in this repository due to its large size and internship guidelines.
+​Phase 1: Data Engineering & EDA (Week 1)
 
-To run this project:
-
-1. Download the dataset from the Kaggle link above
-2. Ensure the file name is:
-   "311 service requests for 2009.csv"
-3. Place the file in the same folder as the notebook
+​Dataset: Analyzed 20,000+ records from the NYC 311 Service Request dataset.
+​Preprocessing: Implemented a custom NLP pipeline including lowercase conversion, removal of URLs/special characters, stopword filtering, and Lemmatization.
+​Insights: Generated WordClouds and N-Gram (Unigram/Bigram) analysis to identify top citizen concerns (Noise, Potholes, Utilities).
 
 
-🧹 Work Completed (Week 1)
+​Phase 2: Machine Learning & Model Selection (Week 2)
+​Methodology: Evaluated Random Forest vs. Logistic Regression for classification.
+​Feature Extraction: Utilized TF-IDF Vectorization to convert textual descriptions into numerical feature vectors.
+​Optimization: Selected Logistic Regression for its balance of high accuracy and low latency in production environments.
+​Artifacts: Exported trained model (lr_model.pkl) and vectorizer (tfidf_vectorizer.pkl) for API integration.
 
-✔ Data Loading & Inspection
+​Phase 3: Deep Learning & Triage Logic (Week 3)
+​Evolution: Migrated workflow from Jupyter Notebooks to VS Code to implement production-grade Python scripts.
+​Sentiment Engine: Integrated a RoBERTa-based Transformer model to detect citizen frustration levels.
+​Priority Logic: Developed a custom triage algorithm that calculates Urgency Scores based on the intersection of complaint type and sentiment intensity.
 
-- Loaded dataset using Pandas
-- Checked dataset shape and structure
-- Sampled,Slicing done for select 20,000 rows efficiently
+​Phase 4: API Deployment (Week 4 - Current)
+​Framework: Currently started to  build a high-performance REST API using FastAPI.
 
-✔ Data Cleaning
-
-- Handled missing values
-- Selected relevant Columns
--Fill the missing values
-
-✔ Text Preprocessing
-
-- Converted text to lowercase
-- Removed URLs
-- Removed special characters
-- Removed stopwords
-- Applied lemmatization
-
-✔ Exploratory Data Analysis (EDA)
-
-- Analyzed data distribution
-- Identified patterns in complaints
-
-✔ Visualization
-
-- Generated WordCloud for text insights
-- Created plots using Matplotlib & Seaborn
-
-✔ NLP Feature Extraction
-
-- Unigram analysis
-- Bigram analysis
-- CountVectorizer implementation
-
-
-🛠 Tools & Technologies
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- NLTK
-
-
-📈 Key Observations
-
-- Large volume of textual complaints requires preprocessing
-- Frequent terms identified using n-grams
-- WordCloud helps visualize dominant complaint topics
-
-👥 Team Contributions
-
-* Data Collection, Cleaning,Text Preprocessing(Remove URLs,lowercase,Stopwords & special characters & Lemmatization) & EDA : Self
-  
-* Additional EDA & Word Clouds, n-grams (Unigram,bigram): Teammate
-
-* Remaining tasks: In progress
-
-📁 Project Structure
-
-project/
-│── week1 government data.ipynb
-
-│── README.md
-
-│── .gitignore
-
+​🛠️ Tech Stack
+​Languages & Libraries : Python (Pandas, NumPy), Matplotlib, Seaborn
+​AI/ML: Scikit-learn, NLTK, HuggingFace Transformers (RoBERTa)
+​Web Framework: FastAPI, Uvicorn, Pydantic
+​Tools: VS Code, Git/GitHub, Jupyter Notebook
