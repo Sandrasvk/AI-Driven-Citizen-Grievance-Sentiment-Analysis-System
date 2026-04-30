@@ -9,6 +9,7 @@ Government & Public Sector: AI-Driven Citizen Grievance & Sentiment Analysis Sys
 Dataset Name: NYC 311 Service Requests (2009)
 Source: Kaggle
 Link: https://www.kaggle.com/datasets/sheikmohamed/nyc-311-service-requests-for-2009/data
+
 Main Source : https://data.cityofnewyork.us/Social-Services/311-Service-Requests-for-2009/3rfa-3xsf
 📊 Dataset Details:
 
@@ -39,7 +40,10 @@ Sample Used: 20,000 records (for efficient processing)
 ​Framework: Currently started to  build a high-performance REST API using FastAPI.
 
 ​🛠️ Tech Stack
-​Languages & Libraries : Python (Pandas, NumPy), Matplotlib, Seaborn
-​AI/ML: Scikit-learn, NLTK, HuggingFace Transformers (RoBERTa)
-​Web Framework: FastAPI, Uvicorn, Pydantic
-​Tools: VS Code, Git/GitHub, Jupyter Notebook
+​* Languages & Libraries : Python (Pandas, NumPy), Matplotlib, Seaborn
+
+​* AI/ML: Scikit-learn, NLTK, HuggingFace Transformers (RoBERTa)
+
+​* Web Framework: FastAPI, Uvicorn, Pydantic
+
+​* Tools: VS Code, Git/GitHub, Jupyter Notebook
