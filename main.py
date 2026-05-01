@@ -2,6 +2,7 @@ import joblib
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from datetime import datetime
 from sentiment_triage import CivicTriageEngine
 
 
@@ -32,8 +33,10 @@ class GrievanceRequest(BaseModel):
 def home():
         return{"status": "Online",
            "project": "AI-Driven Citizen Grievance System",
+           "timestamp" : datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
            "version": "1.0.0",
-           "models_loaded": True
+           "models_loaded": True,
+           "capabilities": ["Sentiment Analysis", "Department Routing", "Priority Level", "Priority Score","Confidence"]
         }
 
 
@@ -48,31 +51,50 @@ async def process_grievance(item:GrievanceRequest):
             analysis = triage_engine.analyze(item.text)
 
             vec = tfidf_vectorizer.transform([analysis['processed_text']])
+            
+            probs = lr_model.predict_proba(vec)[0]
+            max_conf = max(probs)
             pred_label = lr_model.predict(vec)[0]
             
             DEPT_MAP = {
                 "HEATING": "Department of Housing Preservation and Development",
                 "HOT WATER": "Department of Housing Preservation and Development",
-                "Street Light Condition": "Department of Health and Mental Hygiene",
-                "Sewer": "Department of Environmental Protection"
+                "STREET LIGHT CONDITION": "Department of Transportation",
+                "SEWER": "Department of Environmental Protection",
+                "PLUMBING" : "Department of Environmental Protection",
+                "GENERAL CONSTRUCTION" : "Department of Buildings",
+                "PAINT-PLASTER": "Department of Housing Preservation and Development"
             }
             
-            agency = DEPT_MAP.get(pred_label,"General City Triage")
+
+            if max_conf < 0.25:
+                 assigned_agency = "Manual review/ General City Triage"
+                 final_complaint = "Unclassified Inquiry"
+            else:
+                 assigned_agency = DEPT_MAP.get(pred_label.upper(), "General City Triage")
+                 final_complaint = pred_label.title()
 
             return{
                 "status": "success",
-                "data": {
-                    "complaint_type": pred_label,
-                    "assigned_agency": agency,
-                    "analysis":{
-                        "sentiment": analysis['sentiment'],
-                        "priority_level": analysis['priority'],
-                        "urgency_score": analysis['urgency_score'],
-                        "priority_score": analysis.get('priority_score'),
-                        "confidence" : round(analysis['confidence'])
-                    }
+                "metadata": {
+                     "timestamp":
+                     datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                     "ml_confidence": round(float(max_conf),2)
+                },
+                
+
+                "triage_results": {
+                    "original_input": item.text,
+                    "complaint_type": final_complaint,
+                    "assigned_agency": assigned_agency,
+                    "sentiment": analysis['sentiment'],
+                    "priority_level": analysis['priority'],
+                    "urgency_score": analysis['urgency_score'],
+                    "priority_score": analysis.get('priority_score'),
+                    "confidence" : analysis['confidence']
                 }
             }
+        
         
         except Exception as e:
             raise HTTPException(status_code=500, details=f"Inference Error: {str(e)}")
