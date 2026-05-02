@@ -79,6 +79,7 @@ Languages & Libraries
 * Python, Pandas, NumPy, Matplotlib, Seaborn
 
 NLP
+
 *NLTK, spaCy concepts, WordCloud
 
 *AI/ML
