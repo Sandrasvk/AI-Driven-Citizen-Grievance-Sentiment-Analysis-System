@@ -71,18 +71,27 @@ Proper HTTP error handling (400, 422, 500)
 
 
 🛠️ Tech Stack
-Category
+
 Technologies
+
 Languages & Libraries
-Python, Pandas, NumPy, Matplotlib, Seaborn
+
+* Python, Pandas, NumPy, Matplotlib, Seaborn
+
 NLP
-NLTK, spaCy concepts, WordCloud
-AI/ML
-Scikit-learn, HuggingFace Transformers (RoBERTa)
+*NLTK, spaCy concepts, WordCloud
+
+*AI/ML
+
+*Scikit-learn, HuggingFace Transformers (RoBERTa)
+
 Web Framework
-FastAPI, Uvicorn, Pydantic
+
+*FastAPI, Uvicorn, Pydantic
+
 Tools
-VS Code, Git/GitHub, Jupyter Notebook
+
+*VS Code, Git/GitHub, Jupyter Notebook
 
 
 🌐 API Endpoints
