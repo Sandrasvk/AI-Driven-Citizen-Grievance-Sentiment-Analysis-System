@@ -91,47 +91,82 @@ Returns system status, version, and capabilities.
 Response:
 Json
 ​ {
+
   "status": "Online",
+  
   "project": "AI-Driven Citizen Grievance System",
+  
   "version": "1.0.0",
+  
   "models_loaded": true,
+  
   "capabilities": ["Sentiment Analysis", "Department Routing", "Priority Level", "Priority Score", "Confidence"]
 }
  POST /triage
+ 
 Accepts a raw citizen complaint and returns full triage analysis.
+
 Request:
+
  {
+ 
   "text": "There is a gas leak in my building, it is very dangerous"
+  
 }
- Response:
+
+ Response
+ 
 Json
+
 {
+
   "status": "success",
+  
   "metadata": {
+  
     "timestamp": "2026-05-03 00:33:15",
+    
     "ml_confidence": 1.0
+    
   },
   "triage_results": {
+  
     "original_input": "There is a gas leak in my building, it is very dangerous",
+    
     "complaint_type": "Gas Leak (Emergency)",
+    
     "assigned_agency": "Department of Environmental Protection",
+    
     "sentiment": "Negative",
+    
     "priority_level": "High",
+    
     "priority_score": 80,
+    
     "urgency_score": 4,
+    
     "confidence": 0.911
   }
 }
 ▶️ How to Run
+
 1. Install Dependencies
+   
 Bash
 pip install -r requirements.txt
+
  2. Train the Model
+    
 Bash
- python train.py
- 3. Start the API Server
+python train.py
+ 
+ 4. Start the API Server
+    
 Bash
- uvicorn main:app --reload --port 8001
+uvicorn main:app --reload --port 8001
+
 4. Access Swagger UI
+   
 Open in browser:
+
  http://127.0.0.1:8001/docs
