@@ -76,7 +76,7 @@ Technologies
 
 Languages & Libraries
 
-* Python, Pandas, NumPy, Matplotlib, Seaborn
+*Python, Pandas, NumPy, Matplotlib, Seaborn
 
 NLP
 
