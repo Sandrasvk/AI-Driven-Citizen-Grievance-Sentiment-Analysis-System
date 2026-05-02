@@ -1,8 +1,6 @@
 import pandas as pd
 import joblib 
 import os
-import sys
-import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
